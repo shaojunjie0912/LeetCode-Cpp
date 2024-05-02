@@ -18,9 +18,14 @@ using namespace std;
  */
 class Solution {
 public:
-#if 0
+#if 1
     // 递归实现
     int maxDepth(TreeNode* root) {
+        if (root == nullptr)  // 退出条件
+            return 0;
+        int l_depth = maxDepth(root->left) + 1;  // 递归条件
+        int r_depth = maxDepth(root->right) + 1;
+        return l_depth > r_depth ? l_depth : r_depth;  // 返回最大的
     }
 #else
     // 迭代实现
