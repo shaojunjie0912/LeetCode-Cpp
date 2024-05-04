@@ -21,11 +21,11 @@ public:
 #if 1
     // 递归实现
     int maxDepth(TreeNode* root) {
-        if (root == nullptr)  // 退出条件
+        if (root == nullptr)  // 递归退出条件
             return 0;
-        int l_depth = maxDepth(root->left) + 1;  // 递归条件
-        int r_depth = maxDepth(root->right) + 1;
-        return l_depth > r_depth ? l_depth : r_depth;  // 返回最大的
+        int l_depth = maxDepth(root->left);  // 单层递归逻辑
+        int r_depth = maxDepth(root->right);
+        return max(l_depth, r_depth) + 1;  // 返回最大的+1
     }
 #else
     // 迭代实现
