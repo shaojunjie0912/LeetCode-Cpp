@@ -17,7 +17,11 @@ using namespace std;
  */
 class Solution {
 public:
-    // 层序遍历思想
+#if 1
+    // 递归法
+    int minDepth(TreeNode* root) {}
+#else
+    // 迭代法（层序遍历）
     int minDepth(TreeNode* root) {
         if (root == nullptr)
             return 0;
@@ -39,7 +43,7 @@ public:
                     return min_depth;
             }
         }
-        return min_depth;
     }
+#endif
 };
 // @leet end
