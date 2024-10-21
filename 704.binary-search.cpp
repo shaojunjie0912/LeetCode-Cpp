@@ -9,7 +9,7 @@ public:
     // [left, right) 左闭右开区间
     int search(vector<int> &nums, int target) {
         int left = 0;
-        // NOTE: 右边是开区间
+        // NOTE: 右边是开区间(因此是size而不是size-1)
         int right = nums.size();
         // NOTE: 闭区间 left==right 无意义
         while (left < right) {
@@ -24,6 +24,7 @@ public:
         }
         return -1;
     }
+
 #else
     // [left, right] 闭区间
     int search(vector<int> &nums, int target) {
